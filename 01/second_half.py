@@ -2,7 +2,7 @@ def calculate_fuel(current, total = 0):
     new = int(current / 3) - 2
     if new < 0:
         return total
-    return calculate_fuel( new, total + new )
+    return calculate_fuel(new, total + new)
 
 fuel = 0
 
