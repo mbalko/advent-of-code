@@ -21,19 +21,17 @@ def run_computer(data):
             elif opcode == 2:
                 data[arg3] = arg1 * arg2
             elif opcode == 7:
-                data[arg3] = 1 if arg1 < arg2 else 0
+                data[arg3] = arg1 < arg2
             elif opcode == 8:
-                data[arg3] = 1 if arg1 == arg2 else 0
+                data[arg3] = arg1 == arg2
         elif opcode in [3, 4]:
             jump = 2
             if opcode == 3:
                 data[data[i + 1]] = int(input()) # Input: 5
-            else:
+            elif opcode == 4:
                 print(arg1)
         elif opcode in [5, 6]:
-            if opcode == 5 and arg1:
-                i = arg2
-            elif opcode == 6 and not arg1:
+            if (opcode == 5 and arg1) or (opcode == 6 and not arg1):
                 i = arg2
             else:
                 jump = 3
